@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>METRIX · Apresentação Editorial de Rebranding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --wbs-brand: #8A38FE;
+      --wbs-brand-contrast: #5705CB;
+      --wbs-brand-smooth: #E8D7FF;
+      --wbs-brand-light: #F7F3FF;
+      --wbs-border: #E5E0F5;
+      --wbs-border-subtle: #E2E8F0;
+      --wbs-text-strong: #0F172A;
+      --wbs-text-default: #475569;
+      --wbs-text-muted: #64748B;
+      --wbs-canvas: #F1F5F9;
+      --wbs-sheet: #FFFFFF;
+      --wbs-radius-sm: 6px;
+      --wbs-radius-md: 10px;
+      --wbs-radius-lg: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--wbs-canvas);
+      color: var(--wbs-text-default);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Top Sticky Utility Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--wbs-border);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .top-bar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--wbs-text-strong);
+      text-decoration: none;
+    }
+
+    .top-bar-brand img {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    .top-bar-brand span.sep {
+      color: #CBD5E1;
+      font-weight: 400;
+    }
+
+    .top-bar-brand span.subtitle {
+      font-weight: 500;
+      color: var(--wbs-text-muted);
+      font-size: 13px;
+    }
+
+    .top-bar-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .top-bar-nav a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--wbs-text-muted);
+      padding: 6px 14px;
+      border-radius: var(--wbs-radius-sm);
+      transition: all 0.15s ease-in-out;
+    }
+
+    .top-bar-nav a:hover {
+      color: var(--wbs-brand-contrast);
+      background-color: var(--wbs-brand-light);
+    }
+
+    .btn-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--wbs-brand-contrast);
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: var(--wbs-radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      box-shadow: 0 1px 3px rgba(87, 5, 203, 0.25);
+    }
+
+    .btn-pdf:hover {
+      background: #4703a8;
+      box-shadow: 0 4px 12px rgba(87, 5, 203, 0.35);
+      transform: translateY(-1px);
+    }
+
+    /* Editorial Sheets */
+    .sheet-container {
+      padding: 24px 16px 60px;
+    }
+
+    section.sheet {
+      max-width: 1020px;
+      margin: 28px auto;
+      background: var(--wbs-sheet);
+      border: 1px solid var(--wbs-border-subtle);
+      border-radius: var(--wbs-radius-lg);
+      padding: 52px 64px;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Sheet Header Utilities */
+    .sheet-meta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--wbs-border);
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+    }
+
+    .sheet-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--wbs-brand-contrast);
+      background: var(--wbs-brand-light);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid var(--wbs-brand-smooth);
+    }
+
+    .sheet-page-indicator {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--wbs-text-muted);
+    }
+
+    .sheet-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--wbs-text-strong);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .sheet-lead {
+      font-size: 15px;
+      color: var(--wbs-text-default);
+      max-width: 780px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* Sheet 01: Cover */
+    .cover-sheet {
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 64px 48px !important;
+      background: linear-gradient(165deg, #FFFFFF 0%, #FAF8FF 65%, #F4EEFF 100%);
+      border: 1px solid var(--wbs-border);
+    }
+
+    .cover-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .cover-brand-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .cover-brand-sep {
+      width: 1px;
+      height: 38px;
+      background-color: var(--wbs-border);
+    }
+
+    .cover-brand-metrix {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 0.08em;
+      color: var(--wbs-brand-contrast);
+    }
+
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 840px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--wbs-brand-contrast);
+      background: var(--wbs-brand-smooth);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 22px;
+      letter-spacing: 0.04em;
+    }
+
+    .cover-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 46px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--wbs-text-strong);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .cover-headline .highlight {
+      color: var(--wbs-brand);
+      background: linear-gradient(135deg, var(--wbs-brand) 0%, var(--wbs-brand-contrast) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-subheadline {
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--wbs-text-default);
+      max-width: 740px;
+    }
+
+    .cover-footer {
+      border-top: 1px solid var(--wbs-border);
+      padding-top: 24px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--wbs-text-muted);
+    }
+
+    .cover-footer-left {
+      font-weight: 600;
+      color: var(--wbs-text-strong);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-footer-pill {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      background: #E2E8F0;
+      color: #334155;
+      border-radius: 4px;
+    }
+
+    /* Sheet 02: Racional */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .comparison-card {
+      border: 1px solid var(--wbs-border-subtle);
+      border-radius: var(--wbs-radius-md);
+      padding: 24px;
+      background: #FAFAFA;
+      position: relative;
+    }
+
+    .comparison-card.after {
+      background: #FDFBFF;
+      border-color: var(--wbs-border);
+      box-shadow: 0 4px 16px -2px rgba(138, 56, 254, 0.08);
+    }
+
+    .card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .card-label.before-label {
+      background: #E2E8F0;
+      color: #475569;
+    }
+
+    .card-label.after-label {
+      background: var(--wbs-brand-smooth);
+      color: var(--wbs-brand-contrast);
+    }
+
+    .comparison-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--wbs-text-strong);
+      margin-bottom: 12px;
+    }
+
+    .comparison-list {
+      list-style: none;
+      font-size: 13.5px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comparison-list li {
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.45;
+    }
+
+    .comparison-card.before .comparison-list li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: #94A3B8;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .comparison-card.after .comparison-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--wbs-brand-contrast);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pillar-box {
+      border: 1px solid var(--wbs-border);
+      background: #FFFFFF;
+      border-radius: var(--wbs-radius-md);
+      padding: 20px;
+    }
+
+    .pillar-icon-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--wbs-brand-light);
+      color: var(--wbs-brand-contrast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
+      border: 1px solid var(--wbs-brand-smooth);
+    }
+
+    .pillar-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--wbs-text-strong);
+      margin-bottom: 6px;
+    }
+
+    .pillar-desc {
+      font-size: 13px;
+      color: var(--wbs-text-default);
+      line-height: 1.5;
+    }
+
+    /* Images Framing & Annotations */
+    .preview-frame {
+      border: 1px solid var(--wbs-border-subtle);
+      border-radius: var(--wbs-radius-md);
+      overflow: hidden;
+      background: #FFFFFF;
+      box-shadow: 0 6px 24px -4px rgba(15, 23, 42, 0.07);
+      margin-bottom: 24px;
+    }
+
+    .preview-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .annotations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .annotation-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--wbs-radius-sm);
+      padding: 16px;
+    }
+
+    .annotation-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .annotation-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--wbs-brand-contrast);
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .annotation-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--wbs-text-strong);
+    }
+
+    .annotation-text {
+      font-size: 12.5px;
+      color: var(--wbs-text-default);
+      line-height: 1.45;
+    }
+
+    /* Sheet 05: Governance Two-Column */
+    .gov-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .gov-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gov-col-header {
+      margin-bottom: 12px;
+    }
+
+    .gov-col-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--wbs-brand-contrast);
+      background: var(--wbs-brand-light);
+      border: 1px solid var(--wbs-brand-smooth);
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .gov-col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--wbs-text-strong);
+    }
+
+    .gov-col .preview-frame {
+      margin-bottom: 16px;
+    }
+
+    .gov-notes-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--wbs-radius-sm);
+      padding: 16px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .gov-notes-box strong {
+      color: var(--wbs-text-strong);
+    }
+
+    /* Sheet 06: Technical Map Table */
+    .table-wrapper {
+      border: 1px solid var(--wbs-border);
+      border-radius: var(--wbs-radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    table.tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 12.5px;
+    }
+
+    table.tech-table th {
+      background: #F8FAFC;
+      color: var(--wbs-text-strong);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--wbs-border);
+    }
+
+    table.tech-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #EDF2F7;
+      vertical-align: middle;
+    }
+
+    table.tech-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.tech-table tr:hover td {
+      background: #FDFBFF;
+    }
+
+    .file-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--wbs-brand-contrast);
+      background: var(--wbs-brand-light);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--wbs-brand-smooth);
+      display: inline-block;
+    }
+
+    .scope-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .scope-frontend {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+
+    .scope-backend {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .rollout-callout {
+      background: linear-gradient(135deg, #F9F5FF 0%, #FFFFFF 100%);
+      border: 1px solid var(--wbs-border);
+      border-radius: var(--wbs-radius-md);
+      padding: 20px 24px;
+    }
+
+    .rollout-callout-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--wbs-brand-contrast);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rollout-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .rollout-step {
+      background: #FFFFFF;
+      border: 1px solid var(--wbs-border);
+      border-radius: var(--wbs-radius-sm);
+      padding: 12px 14px;
+    }
+
+    .rollout-step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--wbs-brand-contrast);
+      margin-bottom: 4px;
+    }
+
+    .rollout-step-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--wbs-text-strong);
+      margin-bottom: 4px;
+    }
+
+    /* Print Styles */
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background: #FFFFFF !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .sheet-container {
+        padding: 0 !important;
+      }
+
+      section.sheet {
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 32px 40px !important;
+        break-after: page;
+        page-break-after: always;
+        min-height: 98vh;
+      }
+
+      section.sheet:last-of-type {
+        break-after: auto;
+        page-break-after: auto;
+      }
+
+      .preview-frame {
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1 !important;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 8mm 6mm;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Utility Bar -->
+  <header class="top-bar no-print">
+    <a href="#capa" class="top-bar-brand">
+      <img src="assets/Semantix-Simbolo-Positivo-RGB.png" alt="Semantix" />
+      <span>METRIX</span>
+      <span class="sep">·</span>
+      <span class="subtitle">Apresentação de Rebranding</span>
+    </a>
+    <ul class="top-bar-nav">
+      <li><a href="#capa">Capa</a></li>
+      <li><a href="#racional">Racional</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#app-shell">App Shell</a></li>
+      <li><a href="#governanca">Governança</a></li>
+      <li><a href="#mapa-tecnico">Mapa Técnico</a></li>
+    </ul>
+    <button class="btn-pdf" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Salvar PDF
+    </button>
+  </header>
+
+  <main class="sheet-container">
+
+    <!-- Página 01: Capa Editorial -->
+    <section id="capa" class="sheet cover-sheet">
+      <div class="cover-brand-row">
+        <img class="cover-brand-logo" src="assets/Semantix-Simbolo-Positivo-RGB.png" alt="Semantix Símbolo" />
+        <div class="cover-brand-sep"></div>
+        <div class="cover-brand-metrix">METRIX</div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-badge">PROPOSTA DE REBRANDING UX/UI · ENTERPRISE</div>
+        <h1 class="cover-headline">
+          Mude a realidade da sua <span class="highlight">operação</span>.
+        </h1>
+        <p class="cover-subheadline">
+          Inteligência de dados que conecta projetos, melhorias, governança e resultado financeiro.
+        </p>
+      </div>
+
+      <div class="cover-footer">
+        <div class="cover-footer-left">
+          <span>Proposta de Rebranding UX/UI</span>
+          <span class="cover-footer-pill">Padrão Enterprise</span>
+        </div>
+        <div>
+          Semantix · Digital Transformation · Novembro 2026
+        </div>
+      </div>
+    </section>
+
+    <!-- Página 02: Contexto & Racional -->
+    <section id="racional" class="sheet">
+      <div class="sheet-meta-header">
+        <div class="sheet-tag">01 · Fundamentação Estratégica</div>
+        <div class="sheet-page-indicator">PÁGINA 02 DE 06</div>
+      </div>
+      <h2 class="sheet-title">Contexto & Racional de Design</h2>
+      <p class="sheet-lead">
+        A evolução de uma percepção reativa de "chamados de TI" para uma plataforma estratégica de inteligência operacional que comprova retorno sobre investimento para a liderança.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card before">
+          <span class="card-label before-label">Antes</span>
+          <div class="comparison-title">DT Gestão de Tickets</div>
+          <ul class="comparison-list">
+            <li>Percepção transacional de abertura passiva de chamados operacionais.</li>
+            <li>Identidade visual utilitária sem diferenciação para tomadores de decisão.</li>
+            <li>Foco exclusivo em status de tarefas individuais sem ligação com ROI.</li>
+            <li>Experiência visual fragmentada entre telas internas e e-mails de alerta.</li>
+          </ul>
+        </div>
+        <div class="comparison-card after">
+          <span class="card-label after-label">Depois</span>
+          <div class="comparison-title">METRIX — Operações & Valor</div>
+          <ul class="comparison-list">
+            <li>Posicionamento de suíte executiva para orquestração de valor e eficiência.</li>
+            <li>Linguagem visual proprietária alinhada aos tokens de marca Semantix.</li>
+            <li>Visibilidade direta de impacto financeiro, SLAs e entregas de negócio.</li>
+            <li>Consistência contínua do primeiro e-mail à aprovação final com 1 clique.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-box">
+          <div class="pillar-icon-box">01</div>
+          <div class="pillar-title">Contenção Visual</div>
+          <p class="pillar-desc">
+            Superfícies límpidas, densidade balanceada e remoção de ruídos visuais para foco estrito na tomada de decisão gerencial.
+          </p>
+        </div>
+        <div class="pillar-box">
+          <div class="pillar-icon-box">02</div>
+          <div class="pillar-title">Hierarquia Editorial</div>
+          <p class="pillar-desc">
+            Tipografia estruturada com Inter e Plus Jakarta Sans, garantindo escaneabilidade instantânea e contraste WCAG AAA.
+          </p>
+        </div>
+        <div class="pillar-box">
+          <div class="pillar-icon-box">03</div>
+          <div class="pillar-title">Fidelidade de Tokens</div>
+          <p class="pillar-desc">
+            Adoção rigorosa da paleta oficial Semantix (#8A38FE, #5705CB, #E8D7FF) com harmonia tonal e estados de interação refinados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página 03: Login -->
+    <section id="login" class="sheet">
+      <div class="sheet-meta-header">
+        <div class="sheet-tag">02 · Experiência de Entrada</div>
+        <div class="sheet-page-indicator">PÁGINA 03 DE 06</div>
+      </div>
+      <h2 class="sheet-title">Experiência de Entrada (Login)</h2>
+      <p class="sheet-lead">
+        O primeiro ponto de contato transmite solidez institucional, clareza e credibilidade corporativa imediata antes mesmo do usuário autenticar.
+      </p>
+
+      <div class="preview-frame">
+        <img src="assets/01-login-metrix.png" alt="Tela de Login METRIX" />
+      </div>
+
+      <div class="annotations-grid">
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">1</div>
+            <div class="annotation-title">Identidade Semantix</div>
+          </div>
+          <div class="annotation-text">
+            Presença marcante do símbolo oficial positivo e do subtítulo "Inteligência operacional e governança", alinhando o produto ao ecossistema corporativo.
+          </div>
+        </div>
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">2</div>
+            <div class="annotation-title">Clareza de Acesso</div>
+          </div>
+          <div class="annotation-text">
+            Acesso via SSO corporativo (Microsoft / Google) destacado e formulário direto de e-mail e senha sem elementos supérfluos.
+          </div>
+        </div>
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">3</div>
+            <div class="annotation-title">Segurança & Trust</div>
+          </div>
+          <div class="annotation-text">
+            Indicador de conexão segura TLS 1.3, criptografia corporativa de ponta a ponta e termos de privacidade enterprise integrados.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página 04: App Shell -->
+    <section id="app-shell" class="sheet">
+      <div class="sheet-meta-header">
+        <div class="sheet-tag">03 · Workspace & Operação</div>
+        <div class="sheet-page-indicator">PÁGINA 04 DE 06</div>
+      </div>
+      <h2 class="sheet-title">Workspace & Operação (App Shell)</h2>
+      <p class="sheet-lead">
+        Ambiente unificado projetado para alta produtividade diária, com navegação estruturada, visibilidade contextual e métricas de impacto direto.
+      </p>
+
+      <div class="preview-frame">
+        <img src="assets/02-app-shell-metrix.png" alt="App Shell METRIX" />
+      </div>
+
+      <div class="annotations-grid">
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">1</div>
+            <div class="annotation-title">Sidebar METRIX</div>
+          </div>
+          <div class="annotation-text">
+            Identidade "METRIX / Operações & Valor" com categorização clara entre Gestão de Demandas, Projetos Estratégicos e Governança.
+          </div>
+        </div>
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">2</div>
+            <div class="annotation-title">Topbar & Fallback Ágil</div>
+          </div>
+          <div class="annotation-text">
+            Busca global instantânea, alertas de pendências em tempo real e identidade visual preservada com integridade em qualquer viewport.
+          </div>
+        </div>
+        <div class="annotation-card">
+          <div class="annotation-header">
+            <div class="annotation-num">3</div>
+            <div class="annotation-title">Densidade & KPIs</div>
+          </div>
+          <div class="annotation-text">
+            Painel consolidado com volume de tickets, tempo médio de resolução (MTTR) e visibilidade direta de economia financeira em reais.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página 05: Governança -->
+    <section id="governanca" class="sheet">
+      <div class="sheet-meta-header">
+        <div class="sheet-tag">04 · Governança Ágil</div>
+        <div class="sheet-page-indicator">PÁGINA 05 DE 06</div>
+      </div>
+      <h2 class="sheet-title">Fluxo de Governança (E-mail & Decisão 1-Clique)</h2>
+      <p class="sheet-lead">
+        Eliminação de gargalos burocráticos: notificações executivas por e-mail bulletproof combinadas com decisão em 1 clique sem fricção.
+      </p>
+
+      <div class="gov-columns">
+        <div class="gov-col">
+          <div class="gov-col-header">
+            <span class="gov-col-badge">Passo 1 · Notificação</span>
+            <div class="gov-col-title">E-mail Corporativo Bulletproof</div>
+          </div>
+          <div class="preview-frame">
+            <img src="assets/03-email-metrix.png" alt="Template de E-mail METRIX" />
+          </div>
+          <div class="gov-notes-box">
+            <strong>Engenharia de Notificação:</strong>
+            <br />
+            • Compatibilidade 100% testada em Outlook Desktop (Word Engine), OWA e Mobile.
+            <br />
+            • Resumo executivo com dados essenciais: Solicitante, Impacto e Valor Financeiro.
+            <br />
+            • CTA direto e seguro "Revisar e Aprovar no METRIX" para deliberação executiva imediata.
+          </div>
+        </div>
+
+        <div class="gov-col">
+          <div class="gov-col-header">
+            <span class="gov-col-badge">Passo 2 · Decisão</span>
+            <div class="gov-col-title">Aprovação em 1 Clique</div>
+          </div>
+          <div class="preview-frame">
+            <img src="assets/04-aprovacao-metrix.png" alt="Tela de Aprovação em 1 Clique METRIX" />
+          </div>
+          <div class="gov-notes-box">
+            <strong>Governança Sem Atrito:</strong>
+            <br />
+            • Token de segurança criptografado com expiração automática por política corporativa.
+            <br />
+            • Interface limpa e responsiva que dispensa login prévio para agilizar aprovação de lideranças.
+            <br />
+            • Confirmação visual em tempo real com trilha de auditoria completa gravada no backend.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página 06: Mapa de Alterações & Rollout -->
+    <section id="mapa-tecnico" class="sheet">
+      <div class="sheet-meta-header">
+        <div class="sheet-tag">05 · Engenharia de Software</div>
+        <div class="sheet-page-indicator">PÁGINA 06 DE 06</div>
+      </div>
+      <h2 class="sheet-title">Mapa de Alterações & Plano de Rollout</h2>
+      <p class="sheet-lead">
+        Mapeamento exato dos 8 arquivos afetados pela refatoração de marca e a estratégia de implantação progressiva sem interrupção operacional.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th style="width: 100px;">Escopo</th>
+              <th style="width: 320px;">Arquivo / Componente</th>
+              <th>Modificação Planejada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/app/layout.tsx</span></td>
+              <td>Metadata global, title "METRIX · Operações & Valor", favicon e OpenGraph.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/app/login/page.tsx</span></td>
+              <td>Rebranding da tela de entrada, símbolo Semantix e copy corporativo de valor.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/layouts/sidebar.tsx</span></td>
+              <td>Header da barra lateral atualizado com logotipo METRIX e categorização de módulos.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/layouts/topbar.tsx</span></td>
+              <td>Breadcrumbs integrados ao nome METRIX, busca global e fallback de responsividade.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/app/aprovar/[token]/page.tsx</span></td>
+              <td>Interface de aprovação de demandas adaptada aos tokens e paleta METRIX.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/app/aprovar-tarefa/[token]/page.tsx</span></td>
+              <td>Fluxo de aprovação de tarefas técnicas alinhado à nova identidade visual.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-frontend">Frontend</span></td>
+              <td><span class="file-badge">frontend/src/components/common/access-denied-barrier.tsx</span></td>
+              <td>Tela de barreira de acesso padronizada com voz institucional METRIX.</td>
+            </tr>
+            <tr>
+              <td><span class="scope-tag scope-backend">Backend</span></td>
+              <td><span class="file-badge">backend/notifications/templates_emails.py</span></td>
+              <td>Templates HTML de e-mails transacionais com assinatura Semantix METRIX.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rollout-callout">
+        <div class="rollout-callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Plano de Rollout em 3 Fases (Zero Downtime)
+        </div>
+        <div class="rollout-steps">
+          <div class="rollout-step">
+            <div class="rollout-step-num">FASE 01 · CANARY</div>
+            <div class="rollout-step-title">Governança Externa</div>
+            <p style="color: var(--wbs-text-default); font-size: 12px;">
+              Deploy dos novos templates de e-mail e telas públicas de aprovação para validação com gestores chave.
+            </p>
+          </div>
+          <div class="rollout-step">
+            <div class="rollout-step-num">FASE 02 · CORE APP</div>
+            <div class="rollout-step-title">Shell & Autenticação</div>
+            <p style="color: var(--wbs-text-default); font-size: 12px;">
+              Atualização do Login, Sidebar, Topbar e Layout base no ambiente de homologação e equipe interna.
+            </p>
+          </div>
+          <div class="rollout-step">
+            <div class="rollout-step-num">FASE 03 · PROD GA</div>
+            <div class="rollout-step-title">Disponibilização Geral</div>
+            <p style="color: var(--wbs-text-default); font-size: 12px;">
+              Lançamento para 100% dos usuários com telemetria ativa, documentação oficial e comunicação corporativa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
